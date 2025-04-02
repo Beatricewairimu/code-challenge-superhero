@@ -147,6 +147,13 @@ def get_episode(id):
         }
     return {'error': 'Episode not found'}, 404
 
+@app.route('/test', methods=['GET'])
+def test():
+    """
+    Test endpoint to check if the API is working.
+    """
+    return {'message': 'API is working!'}
+
 @app.route('/guests', methods=['GET'])
 def get_guests():
     guests = Guest.query.all()
